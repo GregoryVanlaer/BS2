@@ -20,22 +20,18 @@ services:
     - "8000:8080"
     restart: always
     profiles: container
-    jpa:
-      database: MYSQL
-      hibernate:
-        ddl-auto: validate
     datasource:
       url: jdbc:mysql://mysql:3306/pdb
       username: pdb
       password: pdbpass
       driver-class-name: com.mysql.jdbc.Driver
     environment:
-      - MYSQL_HOST: db:3306
-      - SPRING_DB_HOST: db:3306
-      - OPENJDK_DB_HOST: db:3306	  
-      - SPRING_DATASOURCE_URL=jdbc:mysql://pdb/quotes?useSSL=false&allowPublicKeyRetrieval=true
-      - SPRING_DATASOURCE_USERNAME=pdb
-      - SPRING_DATASOURCE_PASSWORD=pdbpass
+      MYSQL_HOST: db:3306
+      SPRING_DB_HOST: db:3306
+      OPENJDK_DB_HOST: db:3306	  
+      SPRING_DATASOURCE_URL=jdbc:mysql://pdb/quotes?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME=pdb
+      SPRING_DATASOURCE_PASSWORD=pdbpass
   f:
     depends_on:
     - db
