@@ -1,0 +1,16 @@
+    profiles: container
+    jpa:
+      database: MYSQL
+      hibernate:
+         ddl-auto: validate
+
+    datasource:
+        url: jdbc:mysql://mysql:3306/pdb
+        username: pdb
+        password: pdbpass
+        driver-class-name: com.mysql.jdbc.Driver
+            
+    environment:         
+      - SPRING_DATASOURCE_URL=jdbc:mysql://pdb/quotes?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=pdb
+      - SPRING_DATASOURCE_PASSWORD=pdbpass
